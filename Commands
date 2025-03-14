@@ -1,0 +1,19 @@
+firstname       ||    Lastname    ||    email
+Kavya           ||    Bhoomireddy ||    kavyabhoomireddy@gmail.com
+
+
+Concatenation : ||
+                Select firstname || ' ' || lastname from User;
+                >> Kavya Bhoomireddy
+UPPER : UPPER()
+                Select UPPER(first_name) from User;
+                >> KAVYA
+POSITION : POSITION()
+                Select LEFT(email, POSITION('@' IN email)) from User;
+                >>kavyabhoomireddy@
+SUBSTRING : SUBSTRING()
+                Select SUBSTRING(string from START [for length] from Table;
+                Select SUBSTRING(string from POSITION('.' in email) for pos) from Table;
+                >>Select SUBSTRING(email from 2 [for 3] from Table;
+                >>avy
+
