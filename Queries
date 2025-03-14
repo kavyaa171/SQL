@@ -1,0 +1,7 @@
+what is the month with the highest total payment amount?
+SELECT EXTRACT(month from payment_date), SUM(Amount) From Payment GROUP BY EXTRACT(month from payment_date);
+SELECT EXTRACT(month from payment_date) as month, SUM(Amount) From Payment GROUP BY month;
+SELECT EXTRACT(month from payment_date) as month, SUM(Amount) as tt From Payment GROUP BY month ORDER BY tt desc limit 1;
+
+what is the day of week with the highest total payment amount?
+what is the highest amount one customer has spent in a week?
