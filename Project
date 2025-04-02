@@ -1,0 +1,70 @@
+Question 1:
+Level: Simple
+  
+  Topic: DISTINCT
+  
+  Task: Create a list of all the different (distinct) replacement costs of the films.
+  
+  Question: What's the lowest replacement cost?
+  
+  Answer: 9.99
+
+Q : SELECT DISTINCT REPLACEMENT_COSTS FROM FILMS ORDER BY 1;
+  Question 2:
+  
+  Level: Moderate
+  
+  Topic: CASE + GROUP BY
+  
+  Task: Write a query that gives an overview of how many films have replacements costs in the following cost ranges
+  
+  low: 9.99 - 19.99
+  
+  medium: 20.00 - 24.99
+  
+  high: 25.00 - 29.99
+  
+  Question: How many films have a replacement cost in the "low" group?
+  
+  Answer: 514
+Task : Select (SELECT COUNT(REPLACEMENTCOST) FROM C WHERE C.REPLACEMENTCOST BETWEEN 9.99 AND 19.99 as LOW),
+(SELECT COUNT(REPLACEMENTCOST) FROM C WHERE C.REPLACEMENTCOST BETWEEN 10.00 AND 24.99 as MEDIUM),
+(SELECT COUNT(REPLACEMENTCOST) FROM C WHERE C.REPLACEMENTCOST BETWEEN 25.00 AND 29.99 as HIGH) from C;
+Q : Select 1 from C;
+
+Task : 
+SELECT CASE WHEN REPLACEMENT BETWEEN 9.99 AND 19.99 THEN 'LOW'
+WHen REPLACEMENT BETWEEN 10.00 AND 24.99 THEN 'MEDIUM'
+ELSE 'high'
+END AS COST_RANGE,
+COUNT(*) From Film fgroup by cost_range
+
+
+  Question 3:
+  
+  Level: Moderate
+  
+  Topic: JOIN
+  
+  Task: Create a list of the film titles including their title, length, and category name ordered descendingly by length. Filter the results to only the movies in the category 'Drama' or 'Sports'.
+  
+  Question: In which category is the longest film and how long is it?
+  
+  Answer: Sports and 184
+TASK : SELECT TITLE, length, CN FROM FILM F WHERE F.CN IN ('Drama','Sports') order by length desc;
+Q : Select 
+(Select T.CN,T.length  from Table T 
+where T.length >=(Select T.length from T able T1));
+
+    Question 4:
+    
+    Level: Moderate
+    
+    Topic: JOIN & GROUP BY
+    
+    Task: Create an overview of how many movies (titles) there are in each category (name).
+    
+    Question: Which category (name) is the most common among the films?
+    
+    Answer: Sports with 74 title
+TASK : 
