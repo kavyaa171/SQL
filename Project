@@ -134,8 +134,7 @@ LEFT JOIN address a
 ON a.address_id=c.address_id
 LEFT JOIN city ci
 ON ci.city_id=a.city_id
-GROUP BY city
-ORDER BY city DESC
+GROUP BY city DESC
 
     Question 8:
 
